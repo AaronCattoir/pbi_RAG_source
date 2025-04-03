@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBIDesktopVersion = 2.141.1253.0 (25.03)+74f9999a1e95f78c739f3ea2b96ba340e9ba8729
 
-annotation PBI_QueryOrder = ["Product","SalesFact","Date","Geo","Sentiment","Manufacturer","Indicators","KPI","Category","LabelMonths"]
+annotation PBI_QueryOrder = ["Product","SalesFact","Date","Geo","Sentiment","Manufacturer","Indicators","KPI","Category"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -25,7 +25,6 @@ ref table LocalDateTable_a1cd3d03-2df1-466a-bea5-79b9463a9397
 ref table Indicators
 ref table KPI
 ref table Category
-ref table LabelMonths
 
 ref cultureInfo en-US
 

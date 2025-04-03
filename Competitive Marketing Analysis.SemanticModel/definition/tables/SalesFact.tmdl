@@ -124,11 +124,11 @@ table SalesFact
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure @Indicator01 = IF('SalesFact'[% Category Compete Share]<0.55,1,IF('SalesFact'[% Category Compete Share]>0.6,3,2))
+	measure @Indicator01 = IF('SalesFact'[% Category Compete Share]<0.50,1,IF('SalesFact'[% Category Compete Share]>0.55,3,2))
 		formatString: 0
 		lineageTag: 16e379e5-368e-4702-a702-dd5b1c29acb5
 
-	measure @Indicator02 = IF('SalesFact'[% Unit Market Share YOY Change]<0,1,IF('SalesFact'[% Unit Market Share YOY Change]>.2,3,2))
+	measure @Indicator02 = IF('SalesFact'[% Unit Market Share YOY Change]<0,1,IF('SalesFact'[% Unit Market Share YOY Change]>.3,3,2))
 		formatString: 0
 		lineageTag: 92673264-0da1-4f5f-a625-3389129bd9c1
 
@@ -142,15 +142,15 @@ table SalesFact
 			```
 		lineageTag: 977efc56-1899-412f-993b-ac0dbbfe649e
 
-	measure @Indicator03 = IF('SalesFact'[Total Units YTD Var %]<0,1,IF('SalesFact'[Total Units YTD Var %]>0.1,3,2))
+	measure @Indicator03 = IF('SalesFact'[Total Units YTD Var %]<0,1,IF('SalesFact'[Total Units YTD Var %]>0.2,3,2))
 		formatString: 0
 		lineageTag: 43104470-563d-4727-83f2-399e69a33f2f
 
-	measure @Indicator04 = IF('SalesFact'[Sentiment]<65,1,IF('SalesFact'[Sentiment]>67,3,2))
+	measure @Indicator04 = IF('SalesFact'[Sentiment]<65,1,IF('SalesFact'[Sentiment]>70,3,2))
 		formatString: 0
 		lineageTag: f6c7a35f-617a-42e1-9efc-b5c818a6e80b
 
-	measure @Indicator05 = IF('SalesFact'[Sentiment Gap]<15,1,IF('SalesFact'[Sentiment Gap]>25,3,2))
+	measure @Indicator05 = IF('SalesFact'[Sentiment Gap]<10,1,IF('SalesFact'[Sentiment Gap]>20,3,2))
 		formatString: 0
 		lineageTag: b6e82268-31c6-4062-b857-8d2888d52c51
 
