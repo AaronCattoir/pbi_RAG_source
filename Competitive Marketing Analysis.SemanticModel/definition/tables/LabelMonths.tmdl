@@ -1,0 +1,30 @@
+table LabelMonths
+	lineageTag: d67592bc-bc14-486c-8199-e4974517ea95
+
+	column Sort
+		dataType: string
+		lineageTag: 27196123-5664-44f3-8d72-db12eedb5877
+		summarizeBy: none
+		sourceColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Critical Month'
+		dataType: string
+		lineageTag: 70561677-cac9-431a-9203-8c9d0420601e
+		summarizeBy: none
+		sourceColumn: Critical Month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition LabelMonths = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8krMU9JRci7KLMlMTsxRitWJVnJLTUIX8k0sQhdyLAAJ+aelKQSnJhbn50HVVWIKepXmYRPMwRR0LE1HtyY4tQBdyC+/DF3IJTUZRSgWAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Sort = _t, #"Critical Month" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Sort", type text}, {"Critical Month", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
